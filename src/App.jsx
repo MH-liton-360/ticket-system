@@ -1,13 +1,19 @@
 
 import './App.css'
+import Footer from './Shared/Footer'
+import Navbar from './Shared/Navbar'
 
 function App() {
 
   return (
     <>
-      <div className="">
+      <section className=''>
+        <Navbar></Navbar>
+        <div className="div">
 
-      </div>
+        </div>
+        <Footer></Footer>
+      </section>
     </>
   )
 }
