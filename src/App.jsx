@@ -4,6 +4,7 @@ import Customer_Tickets from './Components/Customer_Tickets'
 import Progress_Resolve_Banner from './Components/Progress_Resolve_Banner'
 import Footer from './Share/Footer'
 import Navbar from './Share/Navbar'
+import TicketActions from './Components/TicketActions'
 
 
 const fetchTickets = async () => {
@@ -26,11 +27,15 @@ function App() {
 
         <Progress_Resolve_Banner />
 
-        <Suspense fallback={<span className="loading loading-spinner loading-xl"></span>
-        }>
-          <Customer_Tickets ticketsPromise={ticketsPromise} />
+        <div className='flex'>
+          <Suspense fallback={<span className="loading loading-spinner loading-xl"></span>
+          }>
+            <Customer_Tickets ticketsPromise={ticketsPromise} />
 
-        </Suspense>
+          </Suspense>
+
+          <TicketActions></TicketActions>
+        </div>
       </div>
 
       {/* Footer */}

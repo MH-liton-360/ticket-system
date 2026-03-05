@@ -1,30 +1,27 @@
 const TicketCard = ({ ticket }) => {
 
-    const { ticket_id, title, status, description, priority } = ticket;
+    const { ticket_id, title, status, description, priority, assigned_to, date } = ticket;
     return (
-        <div className="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg transition-shadow duration-200 p-6 flex flex-col justify-between w-full">
-            {/* Header */}
-            <div className="flex justify-between items-center mb-4">
-                <h2 className="text-lg font-bold text-gray-800">{title}</h2>
-                <button type="button">{status}</button>
+        <div className="card bg-base-100 w-96 shadow-sm">
+            <div className="card-body">
+
+                <div className="flex gap-24">
+                    <h2>{title} </h2>
+                    <p>{status}</p>
+                </div>
+                <p>{description} </p>
+
+                <div className="flex gap-3">
+                    <h3>#{ticket_id}</h3>
+                    <p className="text-amber-700">{priority} </p>
+                    <div className="flex gap-3">
+                        <p>{assigned_to}</p>
+                        <p>{date}</p>
+                    </div>
+                </div>
+
             </div>
 
-            {/* Description */}
-            <p className="text-gray-700 mb-4">
-                {description}
-            </p>
-
-            {/* Priority */}
-            <div className="mb-2">
-                <h3>{ticket_id}</h3>
-                <span className="text-red-600 font-bold">{priority} </span>
-            </div>
-
-            {/* Assignment */}
-            <div className="flex justify-between items-center text-sm text-gray-600">
-                <span>Assigned to: <strong>Sarah Johnson</strong></span>
-                <span>Date: 1/16/2024</span>
-            </div>
         </div>
     );
 };
