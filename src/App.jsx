@@ -1,30 +1,42 @@
-
+import { Suspense } from 'react'
 import './App.css'
 import Customer_Tickets from './Components/Customer_Tickets'
 import Progress_Resolve_Banner from './Components/Progress_Resolve_Banner'
-import Footer from './Shared/Footer'
-import Navbar from './Shared/Navbar'
+import Footer from './Share/Footer'
+import Navbar from './Share/Navbar'
+
+
+const fetchTickets = async () => {
+  const res = await fetch("/cs_tickets.json")
+  return res.json();
+}
+
 
 function App() {
 
+  const ticketsPromise = fetchTickets();
+
   return (
-    <>
-      <section className=''>
+    <div className="min-h-screen flex flex-col">
 
-        <div className="max-w-7xl mx-auto">
+      {/* Main Content */}
+      <div className="grow max-w-7xl mx-auto w-full">
 
-          {/* Navbar  */}
-          <Navbar></Navbar>
+        <Navbar />
 
-          {/* Progress_Resolve_Banner  */}
-          <Progress_Resolve_Banner></Progress_Resolve_Banner>
+        <Progress_Resolve_Banner />
 
-          {/* Customer_Tickets  */}
-          <Customer_Tickets></Customer_Tickets>
-        </div>
-        <Footer></Footer>
-      </section>
-    </>
+        <Suspense fallback={<span className="loading loading-spinner loading-xl"></span>
+        }>
+          <Customer_Tickets ticketsPromise={ticketsPromise} />
+
+        </Suspense>
+      </div>
+
+      {/* Footer */}
+      <Footer />
+
+    </div>
   )
 }
 

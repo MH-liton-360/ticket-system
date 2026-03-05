@@ -1,0 +1,110 @@
+[
+    {
+        "ticket_id": 1001,
+        "title": "Login Issues - Can't Access Account",
+        "status": "Open",
+        "priority": "High",
+        "assigned_to": "John Smith",
+        "date": "2024-01-15",
+        "description": "Customer is unable to log in despite multiple password resets."
+    },
+    {
+        "ticket_id": 1002,
+        "title": "Payment Failed - Card Declined",
+        "status": "Open",
+        "priority": "Medium",
+        "assigned_to": "Sarah Lee",
+        "date": "2024-01-16",
+        "description": "Customer reports their credit card keeps getting declined."
+    },
+    {
+        "ticket_id": 1003,
+        "title": "App Crash on Startup",
+        "status": "Closed",
+        "priority": "High",
+        "assigned_to": "Michael Brown",
+        "date": "2024-01-17",
+        "description": "Mobile app crashes immediately after opening."
+    },
+    {
+        "ticket_id": 1004,
+        "title": "Unable to Update Profile",
+        "status": "Open",
+        "priority": "Low",
+        "assigned_to": "Emily Davis",
+        "date": "2024-01-18",
+        "description": "Customer cannot save changes to their profile settings."
+    },
+    {
+        "ticket_id": 1005,
+        "title": "Email Notifications Not Received",
+        "status": "Open",
+        "priority": "Medium",
+        "assigned_to": "David Wilson",
+        "date": "2024-01-19",
+        "description": "Customer is not receiving any email alerts."
+    },
+    {
+        "ticket_id": 1006,
+        "title": "Order Not Delivered",
+        "status": "Open",
+        "priority": "High",
+        "assigned_to": "Sophia Martinez",
+        "date": "2024-01-20",
+        "description": "Customer claims their order has not arrived after 10 days."
+    },
+    {
+        "ticket_id": 1007,
+        "title": "Password Reset Link Expired",
+        "status": "Closed",
+        "priority": "Low",
+        "assigned_to": "James Anderson",
+        "date": "2024-01-21",
+        "description": "Reset link sent to customer expired too quickly."
+    },
+    {
+        "ticket_id": 1008,
+        "title": "Duplicate Charges on Account",
+        "status": "Open",
+        "priority": "High",
+        "assigned_to": "Olivia Thomas",
+        "date": "2024-01-22",
+        "description": "Customer was charged twice for the same order."
+    },
+    {
+        "ticket_id": 1009,
+        "title": "Slow Website Performance",
+        "status": "Open",
+        "priority": "Medium",
+        "assigned_to": "Daniel Garcia",
+        "date": "2024-01-23",
+        "description": "Customer reports website loading very slowly."
+    },
+    {
+        "ticket_id": 1010,
+        "title": "Subscription Cancelation Failed",
+        "status": "Open",
+        "priority": "High",
+        "assigned_to": "Emma Johnson",
+        "date": "2024-01-24",
+        "description": "Customer tried canceling subscription but still being billed."
+    },
+    {
+        "ticket_id": 1011,
+        "title": "Incorrect Invoice Amount",
+        "status": "Closed",
+        "priority": "Medium",
+        "assigned_to": "William Clark",
+        "date": "2024-01-25",
+        "description": "Invoice shows wrong total compared to order summary."
+    },
+    {
+        "ticket_id": 1012,
+        "title": "Chat Support Not Responding",
+        "status": "Open",
+        "priority": "Low",
+        "assigned_to": "Ava Lewis",
+        "date": "2024-01-26",
+        "description": "Customer says live chat support is unresponsive."
+    }
+]
