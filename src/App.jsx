@@ -1,4 +1,4 @@
-import { Suspense } from 'react'
+import { Suspense, useState } from 'react'
 import './App.css'
 import Customer_Tickets from './Components/Customer_Tickets'
 import Progress_Resolve_Banner from './Components/Progress_Resolve_Banner'
@@ -17,6 +17,28 @@ function App() {
 
   const ticketsPromise = fetchTickets();
 
+  // step: 01 
+  const [inProgress, setInProgress] = useState([]);
+
+  // step: 02 
+  const [resolved, setResolved] = useState([]);
+
+  // step: 03
+  const handleAddTask = (ticket) => {
+    setInProgress([...inProgress, ticket]);
+  };
+
+  // step: 04
+  const handleComplete = (ticket) => {
+
+    // remove inprogress from 
+    const updated = inProgress.filter(t => t.ticket_id !== ticket.ticket_id);
+    setInProgress(updated);
+
+    // adding Resolve 
+    setResolved([...resolved, ticket]);
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
 
@@ -25,16 +47,27 @@ function App() {
 
         <Navbar />
 
-        <Progress_Resolve_Banner />
+        <Progress_Resolve_Banner
+          inProgress={inProgress}
+          resolved={resolved}
+        ></Progress_Resolve_Banner>
 
         <div className='flex'>
           <Suspense fallback={<span className="loading loading-spinner loading-xl"></span>
           }>
-            <Customer_Tickets ticketsPromise={ticketsPromise} />
+            <Customer_Tickets
+              ticketsPromise={ticketsPromise}
+              handleAddTask={handleAddTask}
+
+            />
 
           </Suspense>
 
-          <TicketActions></TicketActions>
+          <TicketActions
+            inProgress={inProgress}
+            resolved={resolved}
+            handleComplete={handleComplete}
+          ></TicketActions>
         </div>
       </div>
 
